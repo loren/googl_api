@@ -1,5 +1,9 @@
 # README
 
+[![Code Climate](https://codeclimate.com/repos/573380500356a548fd0024e3/badges/4d671a986861b5a23518/gpa.svg)](https://codeclimate.com/repos/573380500356a548fd0024e3/feed)
+[![Test Coverage](https://codeclimate.com/repos/573380500356a548fd0024e3/badges/4d671a986861b5a23518/coverage.svg)](https://codeclimate.com/repos/573380500356a548fd0024e3/coverage)
+[![Build Status](https://travis-ci.org/GovWizely/googl_api.svg?branch=master)](https://travis-ci.org/GovWizely/googl_api/)
+
 This project provides a JSON API service around [Google's URL Shortener service](https://developers.google.com/url-shortener/) at [goo.gl](goo.gl). It has a configurable retry mechanism to transparently 
 work around goo.gl's rate limiting. The idea is to call this service instead of goo.gl when you want a
 shortened URL and don't mind waiting a bit for an answer.
