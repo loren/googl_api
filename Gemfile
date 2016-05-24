@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'rails', '>= 5.0.0.racecar1', '< 5.1'
-gem 'puma', '~> 3.0'
 gem 'googl'
 
 group :development do
@@ -16,6 +15,7 @@ end
 
 group :development, :test do
   gem "rspec-rails", "3.5.0.beta3"
+  gem 'puma', '~> 3.0'
 end
 
 group :test do
@@ -24,4 +24,8 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'codeclimate-test-reporter', require: false
+end
+
+group :production do
+  gem 'unicorn'
 end
