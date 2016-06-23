@@ -10,7 +10,7 @@ class UrlShortener
     googl = Googl.shorten(@url, nil, ENV['GOOGL_API_KEY'])
     ShortenerResponse.new(message: 'OK', canonical_url: googl.long_url, short_url: googl.short_url)
   rescue Googl::Error => e
-    unless (tries -= 1).zero?
+    unless (tries -= 1).zero? || e.message !~ /usageLimits/
       sleep @retry_interval_seconds
       Rails.logger.warn("Retrying call for '#{@url}' (#{tries} more)")
       retry
